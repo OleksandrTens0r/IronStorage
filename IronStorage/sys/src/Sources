@@ -1,0 +1,6 @@
+TARGETNAME=IronStorage
+TARGETPATH=..\obj\$(DDKBUILDENV)
+TARGETTYPE=DRIVER
+INCLUDES=..\inc
+TARGETLIBS=$(DDK_LIB_PATH)\wdmsec.lib
+SOURCES=IronStorage.c IronStorageDriver.rc

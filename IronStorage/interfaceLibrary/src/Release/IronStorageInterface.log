@@ -1,0 +1,3 @@
+﻿  IronStorageInterface.c
+LINK : warning LNK4068: /MACHINE not specified; defaulting to X86
+  IronStorageInterface.vcxproj -> C:\Users\Alex\Desktop\filedisk-21\exe\Release\IronStorageInterface.lib

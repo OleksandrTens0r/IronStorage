@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Iron Storage Documentation</title>
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+ 
+<div id="nav">
+  <nav id="navbar">
+    <header>Documentation</header>
+    <ul class="nav navbar-nav flex-column">
+      <li> <a class="nav-link" href="#Introduction">Introduction</a></li>
+      <li> <a class="nav-link" href="#Contents">Contents</a></li>
+      <li> <a class="nav-link" href="#Quick Start">Quick Start</a></li>
+      <li> <a class="nav-link" href="#Encryption Alogirithm">Encryption Alogirithm</a></li>
+      <li> <a class="nav-link" href="#Credits">Credits</a></li>
+    </ul>
+  </nav>
+</div>
+<main class="col-md-9" id="main-doc">
+  <section class="main-section" id="Introduction">
+    <header>Introduction To IronStorage</header>
+    <p>IronStorage is a software system for establishing and maintaining an on-the-fly-encrypted volume (data storage device). On-the-fly encryption means that data is automatically encrypted right before it is saved and decrypted right after it is loaded, without any user intervention. No data stored on an encrypted volume can be read (decrypted) without using the correct password/keyfile(s) or correct encryption keys. Entire file system is encrypted (e.g., file names, folder names, contents of every file, free space, meta data, etc).</p>
+    <p>Here’s how to quickly get started with the IronStorage.</p>
+  </section>
+  <section class="main-section" id="Contents">
+    <header>Contents</header>
+    <ul>
+      <li>Description</li>
+      <li>Quick start</li>
+      <li>Eecryption Algorithm</li>
+      <li>Credits</li>
+      <li>Community</li>
+    </ul>
+  </section>
+  <section class="main-section" id="Quick_start">
+    <p>How to Create and Use a IronStorage Container
+This chapter contains step-by-step instructions on how to create, mount, and use a IronStorage volume. We strongly recommend that you also read the other sections of this manual, as they contain important information.</p>
+  <p>Files can be copied to and from a mounted IronStorage volume just like they are copied to/from any normal disk (for example, by simple drag-and-drop operations). Files are automatically being decrypted on the fly (in memory/RAM) while they are being read or copied from an encrypted IronStorage volume. Similarly, files that are being written or copied to the IronStorage volume are automatically being encrypted on the fly (right before they are written to the disk) in RAM. Note that this does not mean that the whole file that is to be encrypted/decrypted must be stored in RAM before it can be encrypted/decrypted. There are no extra memory (RAM) requirements for IronStorage.</p>
+  <p>Let’s suppose that there is an .avi video file stored on a IronStorage volume (therefore, the video file is entirely encrypted). The user provides the correct password (and/or keyfile) and mounts (opens) the IronStorage volume. When the user double clicks the icon of the video file, the operating system launches the application associated with the file type – typically a media player. The media player then begins loading a small initial portion of the video file from the IronStorage-encrypted volume to RAM (memory) in order to play it. While the portion is being loaded, IronStorage is automatically decrypting it (in RAM). The decrypted portion of the video (stored in RAM) is then played by the media player. While this portion is being played, the media player begins loading another small portion of the video file from the IronStorage-encrypted volume to RAM (memory) and the process repeats. This process is called on-the-fly encryption/decryption and it works for all file types (not only for video files).</p>
+  <p>Note that IronStorage never saves any decrypted data to a disk – it only stores them temporarily in RAM (memory). Even when the volume is mounted, data stored in the volume is still encrypted. When you restart Windows or turn off your computer, the volume will be dismounted and files stored in it will be inaccessible (and encrypted).</p>
+  </section>
+
+  <section class="main-section" id="Quick Start">
+    <header>Quick Start</header>
+    <p>How to Create and Use a Iron Storage Container</p>
+    <p>This chapter contains step-by-step instructions on how to create, mount, and use a Iron Storage volume.</p>
+    <p>Step 1</p>
+    <p>If you have not done so, download and install Iron Storage. Then launch Iron Storage by double-clicking the file Iron Storage.exe</p>
+    <p><img src="start_screen.jpg"></p>
+    <p>Step 2</p>
+    <p>The main Iron Storage window should appear. Click Create Volume (marked with a red rectangle for clarity)</p>
+    <p><img src="start_screen_with_cr_vol.jpg"></p>
+    <p>In this step you need to choose where you wish the Iron Storage volume to be created. Note that a Iron Storage container is just like any normal file. It can be, for example, moved or deleted as any normal file. It also needs a filename, which you will choose in the next step.</p>
+    <p><img src="volume_path.jpg"></p>
+    <p>Select the desired path (where you wish the container to be created) in the file selector. Type the desired container filename in the File name box</p>
+    <p>Click Save.</p>
+    <p>The file selector window should disappear.</p>
+    <p>Step 3</p>
+    <p><img src="add_info.jpg"></p>
+    <p>Here we specify that we wish the size of our Iron Storage container to be 100 megabyte and letter which will be use to display disk name. You may, of course, specify a different size. After you type the desired size in the input field (marked with a red rectangle), click Done.</p>
+    <p><img src="password.jpg"></p>
+    <p>Enter your password. Note that password length should be bigger or equal 8 character and contain only unicode symbols</p>
+    <p><img src="created_volume.jpg"></p>
+    <p>You can see created volume in application and in File Explorer</p>
+    <p><img src="file_explorer.jpg"></p>
+    <p>Unmount volume</p>
+    <p><img src="unmount.jpg"></p>
+    <p>If you want unmount volume simply press Unmount button in front of disk description or press Unmount All button in bottom right corner</p>
+  </section> 
+  <section class="main-section" id="Encryption Alogirithm">
+    <header>Encryption Alogirithm</header>
+    <p>The Advanced Encryption Standard (AES) specifies a FIPS-approved cryptographic algorithm (Rijndael, designed by Joan Daemen and Vincent Rijmen, published in 1998) that may be used by US federal departments and agencies to cryptographically protect sensitive information. Iron Storage uses AES with 14 rounds and a 256-bit key (i.e., AES-256, published in 2001).</p>
+  </section>
+  <section class="main-section" id="Credits">
+    <header>Credits</header>
+    <p>Thanks to Bo Brantén for the drivers on https://www.acc.umu.se/~bosse/.</p>
+  </section>
+</main>
+</html>
